@@ -134,6 +134,12 @@ def build_audio_filter(voice_idx, music_idx, cfg, duration_s):
     The music input must already be a bed of duration_s (see
     build_music_bed) — this filter only trims/fades/mixes it.
     Output label is [aout].
+
+    CORRECT ducking: the MUSIC is compressed using the VOICE as the
+    sidechain ([music][voice]sidechaincompress), then voice + ducked
+    music are mixed with amix. (The old code had it backwards —
+    [voice][music]sidechaincompress — which compressed the voice and
+    DISCARDED the music entirely, so no background music was audible.)
     """
     m = cfg["music"]
     vol = 10 ** (m["level_db"] / 20.0)  # -34 dB -> 0.02 (2%)
@@ -143,23 +149,29 @@ def build_audio_filter(voice_idx, music_idx, cfg, duration_s):
         f"atrim=0:{duration_s:.2f},asetpts=PTS-STARTPTS,"
         f"afade=t=in:st=0:d={fade},afade=t=out:st={duration_s - fade:.2f}:d={fade},"
         f"volume={vol:.3f}[music];"
-        f"[{voice_idx}:a][music]sidechaincompress=threshold={m['duck_threshold']}:"
+        f"[music][{voice_idx}:a]sidechaincompress=threshold={m['duck_threshold']}:"
         f"ratio={m['duck_ratio']}:attack={m['duck_attack_ms']}:"
         f"release={m['duck_release_ms']}:makeup=1[ducked];"
-        f"[ducked]loudnorm=I={m['loudnorm_I']}:TP={m['loudnorm_TP']}:"
+        f"[{voice_idx}:a][ducked]amix=inputs=2:duration=first:normalize=0[mixed];"
+        f"[mixed]loudnorm=I={m['loudnorm_I']}:TP={m['loudnorm_TP']}:"
         f"LRA={m['loudnorm_LRA']},aresample=48000[aout]"
     )
     return filt
 
 
 def final_encode(video, voice, music, ass_path, dest, cfg):
-    """Single final encode: video + mixed audio + burned-in ASS subtitles.
+    """Final encode: video + mixed audio + burned-in ASS subtitles.
 
     The VOICE is the master clock: the final video is exactly as long as the
     narration. If the video is shorter, the last frame is frozen (tpad) so
     no narration is ever cut off; if longer, it is trimmed to the voice.
-    One filter_complex handles video (ASS burn-in, optional tpad) and audio
-    (music mix + ducking + loudnorm), so there is exactly one re-encode.
+
+    TWO PASSES (not one): burning ASS subtitles in the same filter graph
+    as the audio chain TRUNCATES the audio to ~5 s (ffmpeg filter-graph
+    scheduling bug — reproduced locally: audio stream 5.2 s while video
+    is 11.9 s). Pass 1 burns the subtitles into the video only (no
+    audio); pass 2 muxes that video (copy, no re-encode) with the mixed
+    audio. Video is still encoded exactly once.
     """
     v = cfg["video"]
     video_info = media_info(video)
@@ -177,34 +189,37 @@ def final_encode(video, voice, music, ass_path, dest, cfg):
     # short track covers the whole video instead of going silent.
     bed = Path(dest).with_name("music_bed.flac")
     bed_path = build_music_bed(music, duration_s, cfg, bed)
-    audio_filt = build_audio_filter(1, 2, cfg, duration_s)
+    # --- Pass 1: burn subtitles into the video (video only, no audio). ---
     video_chain = "[0:v]"
     if video_dur < voice_dur:
         pad = voice_dur - video_dur
         video_chain += f"tpad=stop_duration={pad:.2f}:stop_mode=clone,"
         log.info("video %.1fs shorter than voice %.1fs — freezing last frame %.1fs",
                  video_dur, voice_dur, pad)
+    video_with_subs = Path(dest).with_name("video_subs.mp4")
     if ass_path and Path(ass_path).exists():
         video_chain += f"ass='{ass_path}'"
-        video_chain += "[vout];"
-        vmap = "[vout]"
+        run([
+            "ffmpeg", "-y", "-v", "error",
+            "-i", str(video),
+            "-vf", video_chain,
+            "-c:v", "libx264", "-preset", v["preset"], "-crf", str(v["crf"]),
+            "-profile:v", v["profile"], "-pix_fmt", v["pix_fmt"],
+            "-r", str(v["fps"]), "-an",
+            "-t", f"{duration_s:.2f}",
+            str(video_with_subs),
+        ])
+        video_src = str(video_with_subs)
     else:
-        video_chain = video_chain.rstrip(",")
-        if video_chain != "[0:v]":
-            video_chain += "[vout];"
-            vmap = "[vout]"
-        else:
-            video_chain = ""
-            vmap = "0:v"
-    filt = video_chain + audio_filt
+        video_src = str(video)
+    # --- Pass 2: mux video (copy) + mixed audio (voice + ducked music). ---
+    audio_filt = build_audio_filter(1, 2, cfg, duration_s)
     run([
         "ffmpeg", "-y", "-v", "error",
-        "-i", str(video), "-i", str(voice), "-i", str(bed_path),
-        "-filter_complex", filt,
-        "-map", vmap, "-map", "[aout]",
-        "-c:v", "libx264", "-preset", v["preset"], "-crf", str(v["crf"]),
-        "-profile:v", v["profile"], "-pix_fmt", v["pix_fmt"],
-        "-r", str(v["fps"]),
+        "-i", str(video_src), "-i", str(voice), "-i", str(bed_path),
+        "-filter_complex", audio_filt,
+        "-map", "0:v", "-map", "[aout]",
+        "-c:v", "copy",
         "-c:a", "aac", "-b:a", v["audio_bitrate"], "-ar", str(v["audio_rate"]),
         "-movflags", "+faststart",
         "-t", f"{duration_s:.2f}",
