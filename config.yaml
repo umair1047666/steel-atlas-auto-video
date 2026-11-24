@@ -22,7 +22,7 @@ video:
 
 voice:
   engine: "edge-tts"      # edge-tts -> piper fallback; a provided voice file always wins
-  edge_voice: "en-US-GuyNeural"
+  edge_voice: "en-US-ChristopherNeural"
   piper_voice: "en_US-ryan-medium"
   piper_model_url: "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/medium/en_US-ryan-medium.onnx"
   piper_config_url: "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/medium/en_US-ryan-medium.onnx.json"
