@@ -17,7 +17,9 @@ def test_config_loads():
     assert cfg["channel"]["name"] == "Steel Atlas"
     assert cfg["video"]["width"] == 1920
     assert cfg["video"]["height"] == 1080
-    assert cfg["music"]["level_db"] == -20
+    assert cfg["music"]["level_db"] == -34  # 2% under the voice
+    assert cfg["music"]["hook_s"] == 30
+    assert cfg["music"]["ending_s"] == 30
     assert cfg["subtitles"]["highlight_fraction"] == 0.05
 
 
@@ -127,3 +129,83 @@ def test_media_info_audio_only(tmp_path):
     assert info[0] == 0 and info[1] == 0  # no video stream
     assert abs(info[2] - 2.0) < 0.2
     assert info[3] is True
+
+
+def _tone_freq(path, start_s, dur=1.0):
+    """Estimate the dominant sine frequency of a 1s window via zero crossings."""
+    import struct
+    import subprocess
+    import wave
+
+    win = str(path) + ".win.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", str(start_s),
+                    "-t", str(dur), "-i", str(path), "-ac", "1", "-ar", "8000",
+                    win], check=True)
+    with wave.open(win, "rb") as w:
+        n = w.getnframes()
+        frames = w.readframes(n)
+    samples = struct.unpack(f"<{n}h", frames)
+    crossings = sum(1 for a, b in zip(samples, samples[1:])
+                    if (a < 0) != (b < 0))
+    return crossings / 2.0 / dur
+
+
+def test_music_bed_hook_middle_ending(tmp_path):
+    """Steel Atlas rule: first hook_s = hook, last ending_s = ending,
+    middle loops to fill the video. A 3-tone track proves the order."""
+    import subprocess
+
+    from pipeline import render
+    from pipeline.common import load_config, media_info
+
+    # 10s track: 0-3s 440 Hz, 3-7s 660 Hz, 7-10s 880 Hz.
+    parts = []
+    for freq, dur, name in [(440, 3, "a.wav"), (660, 4, "b.wav"),
+                            (880, 3, "c.wav")]:
+        p = tmp_path / name
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi",
+                        "-i", f"sine=frequency={freq}:duration={dur}",
+                        str(p)], check=True)
+        parts.append(p)
+    list_file = tmp_path / "list.txt"
+    list_file.write_text(
+        "".join(f"file '{p}'\n" for p in parts), encoding="utf-8")
+    track = tmp_path / "track.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat",
+                    "-safe", "0", "-i", str(list_file), "-c", "copy",
+                    str(track)], check=True)
+
+    cfg = load_config()
+    cfg["music"] = dict(cfg["music"])
+    cfg["music"]["hook_s"] = 3
+    cfg["music"]["ending_s"] = 3
+    bed = render.build_music_bed(str(track), 20.0, cfg, tmp_path / "bed.flac")
+    info = media_info(bed)
+    assert info is not None
+    assert abs(info[2] - 20.0) < 0.3
+    # hook (440) at t=1, looped middle (660) at t=10, ending (880) at t=19.
+    assert abs(_tone_freq(bed, 1.0) - 440) < 60
+    assert abs(_tone_freq(bed, 10.0) - 660) < 60
+    assert abs(_tone_freq(bed, 19.0) - 880) < 60
+
+
+def test_music_bed_short_video_loops_whole_track(tmp_path):
+    """Video shorter than hook+ending: loop the whole track."""
+    import subprocess
+
+    from pipeline import render
+    from pipeline.common import load_config, media_info
+
+    track = tmp_path / "track.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi",
+                    "-i", "sine=frequency=440:duration=10",
+                    str(track)], check=True)
+    cfg = load_config()
+    cfg["music"] = dict(cfg["music"])
+    cfg["music"]["hook_s"] = 30
+    cfg["music"]["ending_s"] = 30
+    bed = render.build_music_bed(str(track), 12.0, cfg, tmp_path / "bed.flac")
+    info = media_info(bed)
+    assert info is not None
+    assert abs(info[2] - 12.0) < 0.3
+    assert abs(_tone_freq(bed, 6.0) - 440) < 60
