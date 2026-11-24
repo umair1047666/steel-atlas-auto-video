@@ -131,8 +131,9 @@ def _scene_visual(job_id, scene, cfg, jdir):
         return str(dest), "cloudflare-flux", "still"
 
     card = stills.make_title_card(
-        (scene.get("keywords") or ["Steel Atlas"])[0].title(),
-        work / f"scene-{scene_id:03d}-card.mp4", cfg)
+        (scene.get("keywords") or [cfg["channel"]["name"]])[0].title(),
+        work / f"scene-{scene_id:03d}-card.mp4", cfg,
+        subtext=cfg["channel"]["name"].upper())
     dest = work / f"scene-{scene_id:03d}.mp4"
     render.normalise_clip(card, dest, cfg, duration_s=duration_s)
     return str(dest), "title-card", "card"
