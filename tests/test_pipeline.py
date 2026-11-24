@@ -17,7 +17,7 @@ def test_config_loads():
     assert cfg["channel"]["name"] == "Steel Atlas"
     assert cfg["video"]["width"] == 1920
     assert cfg["video"]["height"] == 1080
-    assert cfg["music"]["level_db"] == -34  # 2% under the voice
+    assert cfg["music"]["level_db"] == -20  # 10% under the voice
     assert cfg["music"]["hook_s"] == 30
     assert cfg["music"]["ending_s"] == 30
     assert cfg["subtitles"]["highlight_fraction"] == 0.05
