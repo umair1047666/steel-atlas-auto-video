@@ -29,7 +29,8 @@ voice:
 
 music:
   track: "music/track.mp3"   # royalty-free track, placed here (see music/README.md)
-  level_db: -20              # music sits 20 dB under the voice (volume=0.1)
+  level_db: -34              # music sits 34 dB under the voice (volume=0.02, i.e. 2%);
+                             # sidechain ducking drops it to ~1% under the voice
   duck_threshold: 0.03       # sidechaincompress threshold
   duck_ratio: 8
   duck_attack_ms: 200
@@ -38,6 +39,8 @@ music:
   loudnorm_I: -14            # final loudness target (LUFS)
   loudnorm_TP: -1.5
   loudnorm_LRA: 11
+  hook_s: 30                 # first 30 s of the track = hook (video start)
+  ending_s: 30               # last 30 s of the track = ending (video end)
 
 subtitles:
   highlight_fraction: 0.05  # ~5% of narration gets subtitles ([HL] marks)
