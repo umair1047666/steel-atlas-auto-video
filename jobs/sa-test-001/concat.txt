@@ -1,0 +1,3 @@
+file '/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-001.mp4'
+file '/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-002.mp4'
+file '/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-003.mp4'
