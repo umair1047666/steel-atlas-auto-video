@@ -49,7 +49,9 @@ def upload_to_drive(local_path, folder_id, cfg, live=False):
         token=None, refresh_token=refresh_token,
         token_uri="https://oauth2.googleapis.com/token",
         client_id=client_id, client_secret=client_secret,
-        scopes=["https://www.googleapis.com/auth/drive.file"],
+        # No scopes forced: see jobstore.py — forcing drive.file on
+        # refresh fails with invalid_scope when the grant used a
+        # different Drive scope. The refresh uses the granted scopes.
     )
     service = build("drive", "v3", credentials=creds)
     media = MediaFileUpload(str(local_path), mimetype="video/mp4", resumable=True)
