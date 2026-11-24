@@ -66,7 +66,12 @@ def generate_ai_still(prompt, dest, cfg):
 
 
 def make_title_card(text, dest, cfg, subtext="STEEL ATLAS"):
-    """1920x1080 branded title card (dark steel background, white text)."""
+    """1920x1080 branded title card (dark steel background, white text).
+
+    Single PNG frame. (Earlier version asked ffmpeg for 150 H.264 frames
+    into a .png — the image2 muxer rejects that: 'Cannot write more than
+    one file with the same name'.)
+    """
     dest = Path(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
     w, h = cfg["video"]["width"], cfg["video"]["height"]
@@ -74,14 +79,14 @@ def make_title_card(text, dest, cfg, subtext="STEEL ATLAS"):
     safe_sub = subtext.replace("'", "")[:40]
     run([
         "ffmpeg", "-y", "-v", "error",
-        "-f", "lavfi", "-i", f"color=c=0x1a2733:s={w}x{h}:d=5",
+        "-f", "lavfi", "-i", f"color=c=0x1a2733:s={w}x{h}:d=1",
         "-vf",
         f"drawtext=text='{safe}':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
         f":fontsize=64:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2-40,"
         f"drawtext=text='{safe_sub}':fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
         f":fontsize=36:fontcolor=0x9fb4c7:x=(w-text_w)/2:y=(h-text_h)/2+60",
-        "-frames:v", "150", "-r", "30", "-c:v", "libx264",
-        "-pix_fmt", "yuv420p", str(dest),
+        "-frames:v", "1",
+        str(dest),
     ])
     return str(dest)
 
