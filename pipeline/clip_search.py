@@ -126,6 +126,35 @@ def search_pixabay(keywords, per_page=5):
 
 
 # ---------------------------------------------------------------- NASA (no key)
+def nasa_video_url(item):
+    """Fetch the NASA asset manifest and return a direct mp4 URL, or None.
+
+    The NASA search API does NOT return a direct video file — it returns an
+    `href` (asset manifest URL). The manifest is a JSON list of file URLs;
+    pick an mp4 from it.
+    """
+    href = item.get("href", "")
+    if not href:
+        return None
+    try:
+        r = requests.get(href, timeout=30)
+        r.raise_for_status()
+        files = r.json()
+    except (requests.RequestException, ValueError) as e:
+        log.warning("NASA manifest fetch failed: %s", e)
+        return None
+    if not isinstance(files, list):
+        return None
+    mp4s = [f for f in files if isinstance(f, str) and f.lower().endswith(".mp4")]
+    if not mp4s:
+        return None
+    # Prefer a large/original mp4 when the name says so, else the first.
+    for f in mp4s:
+        if "orig" in f.lower() or "1280" in f or "1920" in f:
+            return f
+    return mp4s[0]
+
+
 def search_nasa(keywords, per_page=5):
     query = " ".join(keywords[:3])
     try:
@@ -281,6 +310,29 @@ def find_clip_for_scene(scene, cfg, dest_dir, tries=3):
                 return str(dest), "pixabay", "clip"
             dest.unlink(missing_ok=True)
 
+    # --- NASA (gated by title/description) ---
+    for item in search_nasa(keywords, cfg["clip_search"]["per_scene_results"]):
+        title = item.get("title", "")
+        desc = item.get("description", "")
+        if is_generic(title, [], blocklist):
+            continue
+        if keyword_overlap(keywords, title, desc) < min_overlap:
+            continue
+        url = nasa_video_url(item)
+        if not url:
+            continue
+        dest = dest_dir / f"scene-{scene_id:03d}-nasa.mp4"
+        try:
+            _download(url, dest)
+        except requests.RequestException as e:
+            log.warning("NASA download failed: %s", e)
+            continue
+        info = media_info(dest)
+        if info and info[1] >= min_h:
+            log.info("scene %s: NASA clip %s", scene_id, dest.name)
+            return str(dest), "nasa", "clip"
+        dest.unlink(missing_ok=True)
+
     # --- Wikimedia (gated by title) ---
     for hit in search_commons(keywords, cfg["clip_search"]["per_scene_results"]):
         title = hit.get("title", "")
@@ -306,7 +358,5 @@ def find_clip_for_scene(scene, cfg, dest_dir, tries=3):
             return str(dest), "wikimedia", "clip"
         dest.unlink(missing_ok=True)
 
-    # NASA video assets need a second fetch (asset manifest); keep as a
-    # last resort here — photo/still fallbacks cover the scene meanwhile.
     log.info("scene %s: no matching real clip found — fallback chain applies", scene_id)
     return None
