@@ -20,7 +20,7 @@
       "source": "pexels"
     }
   ],
-  "stage": "render",
+  "stage": "upload",
   "stages": {
     "clip-search": {
       "detail": "",
@@ -31,6 +31,10 @@
       "detail": ""
     },
     "render": {
+      "ok": true,
+      "detail": ""
+    },
+    "upload": {
       "ok": true,
       "detail": ""
     }
@@ -50,5 +54,14 @@
     "black_segments": [],
     "ok": true
   },
-  "final": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/final.mp4"
+  "final": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/final.mp4",
+  "drive": {
+    "file_id": "DRY-RUN-NO-UPLOAD",
+    "link": "https://drive.google.com/drive/folders/DRY-RUN"
+  },
+  "youtube": {
+    "video_id": "DRY-RUN-NO-UPLOAD",
+    "url": "https://www.youtube.com/watch?v=DRY-RUN"
+  },
+  "status": "dry-run-done"
 }
