@@ -20,7 +20,7 @@
       "source": "pexels"
     }
   ],
-  "stage": "voice",
+  "stage": "render",
   "stages": {
     "clip-search": {
       "detail": "",
@@ -29,9 +29,26 @@
     "voice": {
       "ok": true,
       "detail": ""
+    },
+    "render": {
+      "ok": true,
+      "detail": ""
     }
   },
   "voice": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/voice.mp3",
   "voice_words": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/voice-words.json",
-  "voice_duration_s": 15.84
+  "voice_duration_s": 15.84,
+  "qc": {
+    "file": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/final.mp4",
+    "checks": {
+      "probe": "OK: 1920x1080, 15.87s, audio=True",
+      "resolution": "OK",
+      "duration": "OK: 15.87s",
+      "audio_present": "OK: mean volume -16.0",
+      "black": "OK: no black segment over 1s"
+    },
+    "black_segments": [],
+    "ok": true
+  },
+  "final": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/final.mp4"
 }
