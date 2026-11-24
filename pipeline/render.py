@@ -7,9 +7,12 @@ Quality rules (see README):
   second encode. The ONLY re-encode is the final delivery pass (CRF 18).
 - 720p clips are upscaled with lanczos; <720p was already rejected.
 - Photos / AI stills move with a slow Ken Burns zoom (zoompan).
-- Music: -20 dB under the voice, sidechain ducking, fade in/out,
-  final loudnorm -14 LUFS (always followed by aresample 48000, because
-  loudnorm upsamples to 192 kHz).
+- Music: level_db under the voice (Steel Atlas: -34 dB = 2%), sidechain
+  ducking to ~1% under the voice, fade in/out, final loudnorm -14 LUFS
+  (always followed by aresample 48000, because loudnorm upsamples to
+  192 kHz). The track is a short (~3 min) file: its first hook_s seconds
+  are the hook, its last ending_s seconds the ending, and the middle
+  loops to fill the video (see build_music_bed).
 - Subtitles burn in during the single final encode — no extra generation.
 """
 import math
@@ -70,15 +73,70 @@ def concat_copy(clips, dest):
     return str(dest)
 
 
+def build_music_bed(track, duration_s, cfg, dest):
+    """Build a music bed of exactly duration_s from one short track.
+
+    Steel Atlas rule: the track is ~3 minutes. The FIRST hook_s seconds
+    are the hook (video start), the LAST ending_s seconds are the ending
+    (video end), and the MIDDLE section loops to fill the video body.
+    Without this, a 3-minute track would go silent after 3 minutes of a
+    20-minute video. Output is lossless FLAC (re-encoded once more in the
+    final pass, so no extra lossy generation).
+    """
+    m = cfg["music"]
+    hook_s = float(m.get("hook_s", 30))
+    ending_s = float(m.get("ending_s", 30))
+    track_info = media_info(track)
+    if track_info is None:
+        raise RuntimeError(f"cannot probe music track: {track}")
+    track_len = track_info[2]
+    if track_len <= 0:
+        raise RuntimeError(f"music track has zero duration: {track}")
+    dest = Path(dest)
+    sr = 48000
+    if track_len > hook_s + ending_s and duration_s > hook_s + ending_s:
+        mid_len = track_len - hook_s - ending_s
+        mid_dur = duration_s - hook_s - ending_s
+        mid_samples = max(int(round(mid_len * sr)), 1)
+        filt = (
+            f"[0:a]aformat=sample_rates={sr}:channel_layouts=stereo,asplit=3[ina][inb][inc];"
+            f"[ina]atrim=0:{hook_s:.2f},asetpts=PTS-STARTPTS[hook];"
+            f"[inb]atrim={hook_s:.2f}:{track_len - ending_s:.2f},asetpts=PTS-STARTPTS,"
+            f"aloop=loop=-1:size={mid_samples},atrim=0:{mid_dur:.2f},asetpts=PTS-STARTPTS[mid];"
+            f"[inc]atrim={track_len - ending_s:.2f}:{track_len:.2f},asetpts=PTS-STARTPTS[end];"
+            f"[hook][mid][end]concat=n=3:v=0:a=1,atrim=0:{duration_s:.2f},asetpts=PTS-STARTPTS[aout]"
+        )
+    else:
+        # Track too short to split, or video shorter than hook+ending:
+        # loop the whole track.
+        track_samples = max(int(round(track_len * sr)), 1)
+        filt = (
+            f"[0:a]aformat=sample_rates={sr}:channel_layouts=stereo,"
+            f"aloop=loop=-1:size={track_samples},atrim=0:{duration_s:.2f},"
+            f"asetpts=PTS-STARTPTS[aout]"
+        )
+    run([
+        "ffmpeg", "-y", "-v", "error",
+        "-i", str(track),
+        "-filter_complex", filt,
+        "-map", "[aout]",
+        "-c:a", "flac",
+        str(dest),
+    ])
+    return str(dest)
+
+
 def build_audio_filter(voice_idx, music_idx, cfg, duration_s):
-    """FFmpeg audio filter graph: music -20 dB, ducked under voice,
-    loudnorm -14 LUFS.
+    """FFmpeg audio filter graph: music at level_db under the voice,
+    ducked under voice, loudnorm -14 LUFS.
 
     voice_idx / music_idx are the ffmpeg input numbers (video is input 0).
+    The music input must already be a bed of duration_s (see
+    build_music_bed) — this filter only trims/fades/mixes it.
     Output label is [aout].
     """
     m = cfg["music"]
-    vol = 10 ** (m["level_db"] / 20.0)  # -20 dB -> 0.1
+    vol = 10 ** (m["level_db"] / 20.0)  # -34 dB -> 0.02 (2%)
     fade = min(m["fade_s"], max(duration_s / 4, 1))
     filt = (
         f"[{music_idx}:a]aformat=sample_rates=48000:channel_layouts=stereo,"
@@ -115,6 +173,10 @@ def final_encode(video, voice, music, ass_path, dest, cfg):
     if voice_dur <= 0:
         raise RuntimeError("voice audio has zero duration")
     duration_s = voice_dur
+    # Build the music bed first (hook + looped middle + ending), so a
+    # short track covers the whole video instead of going silent.
+    bed = Path(dest).with_name("music_bed.flac")
+    bed_path = build_music_bed(music, duration_s, cfg, bed)
     audio_filt = build_audio_filter(1, 2, cfg, duration_s)
     video_chain = "[0:v]"
     if video_dur < voice_dur:
@@ -137,7 +199,7 @@ def final_encode(video, voice, music, ass_path, dest, cfg):
     filt = video_chain + audio_filt
     run([
         "ffmpeg", "-y", "-v", "error",
-        "-i", str(video), "-i", str(voice), "-i", str(music),
+        "-i", str(video), "-i", str(voice), "-i", str(bed_path),
         "-filter_complex", filt,
         "-map", vmap, "-map", "[aout]",
         "-c:v", "libx264", "-preset", v["preset"], "-crf", str(v["crf"]),
