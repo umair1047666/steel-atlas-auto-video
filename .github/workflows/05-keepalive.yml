@@ -1,0 +1,32 @@
+# Keepalive — GitHub auto-disables scheduled workflows after 60 days with
+# no repository activity. This weekly job commits a small heartbeat file so
+# the repo is never idle long enough for the schedules to be disabled.
+name: "05 - Keepalive"
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"      # weekly, Sunday 05:00 PKT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Heartbeat
+        run: |
+          mkdir -p state
+          date -u +"last activity: %Y-%m-%d %H:%M UTC" > state/heartbeat.md
+
+      - name: Commit heartbeat
+        run: |
+          git config user.name "steel-atlas-bot"
+          git config user.email "steel-atlas-bot@users.noreply.github.com"
+          git add state/heartbeat.md
+          git diff --cached --quiet && echo "nothing to commit" || git commit -m "keepalive heartbeat [skip ci]"
+          git push
