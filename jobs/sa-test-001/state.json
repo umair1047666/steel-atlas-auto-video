@@ -1,6 +1,6 @@
 {
   "job_id": "sa-test-001",
-  "stage": "upload",
+  "stage": "clip-search",
   "stages": {
     "clip-search": {
       "ok": true,
@@ -22,21 +22,21 @@
   "manifest": [
     {
       "scene": 1,
-      "clip": "/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-001.mp4",
-      "source": "title-card",
-      "kind": "card"
+      "clip": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-001.mp4",
+      "source": "pexels",
+      "kind": "clip"
     },
     {
       "scene": 2,
-      "clip": "/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-002.mp4",
-      "source": "openverse",
-      "kind": "photo"
+      "clip": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-002.mp4",
+      "source": "pexels",
+      "kind": "clip"
     },
     {
       "scene": 3,
-      "clip": "/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-003.mp4",
-      "source": "openverse",
-      "kind": "photo"
+      "clip": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-test-001/clips/scene-003.mp4",
+      "source": "pexels",
+      "kind": "clip"
     }
   ],
   "voice": "/home/hatch/workspace/steel-atlas-auto-video/jobs/sa-test-001/voice.wav",
