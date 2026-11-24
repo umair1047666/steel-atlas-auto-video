@@ -1,0 +1,77 @@
+# Steel Atlas channel config.
+# To clone this pipeline for another channel, copy the repo and edit ONLY this file.
+channel:
+  name: "Steel Atlas"
+  handle: "@SteelAtlas"
+  niche: "engineering and mega-projects documentaries"
+  language: "en"
+
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  crf: 18                 # final delivery encode
+  intermediate_crf: 17    # one-time clip normalisation
+  preset: "medium"
+  profile: "high"
+  pix_fmt: "yuv420p"
+  audio_bitrate: "192k"
+  audio_rate: 48000
+  min_clip_height: 720    # reject anything below 720p; upscale 720p with lanczos
+  target_duration_s: 1200 # 20-minute long-form target (test jobs may be shorter)
+
+voice:
+  engine: "edge-tts"      # edge-tts -> piper fallback; a provided voice file always wins
+  edge_voice: "en-US-GuyNeural"
+  piper_voice: "en_US-ryan-medium"
+  piper_model_url: "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/medium/en_US-ryan-medium.onnx"
+  piper_config_url: "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/medium/en_US-ryan-medium.onnx.json"
+
+music:
+  track: "music/track.mp3"   # royalty-free track, placed here (see music/README.md)
+  level_db: -20              # music sits 20 dB under the voice (volume=0.1)
+  duck_threshold: 0.03       # sidechaincompress threshold
+  duck_ratio: 8
+  duck_attack_ms: 200
+  duck_release_ms: 400
+  fade_s: 2                  # fade in/out seconds
+  loudnorm_I: -14            # final loudness target (LUFS)
+  loudnorm_TP: -1.5
+  loudnorm_LRA: 11
+
+subtitles:
+  highlight_fraction: 0.05  # ~5% of narration gets subtitles ([HL] marks)
+  font: "DejaVu Sans"
+  font_size: 64
+  primary_color: "&H00FFFF&"   # yellow (ASS BGR)
+  outline_color: "&H000000&"
+  outline: 2
+  shadow: 1
+  alignment: 2              # bottom-centre
+
+clip_search:
+  per_scene_results: 5
+  max_clip_s: 30
+  min_clip_s: 4
+  # relevance gate: a candidate must share at least this many keyword tokens
+  # with the scene (Pexels is gated by the search query itself; Pixabay /
+  # Wikimedia / NASA are gated by title+tags+description overlap).
+  min_keyword_overlap: 1
+  # never use a clip whose title/tags contain any of these (generic filler)
+  generic_blocklist:
+    - "abstract background"
+    - "bokeh"
+    - "loop"
+    - "screensaver"
+    - "wallpaper"
+
+stills:
+  cloudflare_model: "@cf/black-forest-labs/flux-1-schnell"
+  steps: 4
+  width: 1920
+  height: 1080
+
+upload:
+  drive_folder_id_secret: "DRIVE_FOLDER_ID"
+  youtube_privacy: "private"   # safe default; change to "public" via secret YOUTUBE_PRIVACY
+  youtube_category: "28"       # Science & Technology
