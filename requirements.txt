@@ -1,0 +1,10 @@
+requests>=2.31
+PyYAML>=6.0
+# Edge TTS (free, no key). Piper is a binary fallback, installed on demand.
+edge-tts>=7.0
+# Google APIs — same libraries the existing video-scheduler uses.
+google-api-python-client>=2.100
+google-auth-oauthlib>=1.2
+google-auth-httplib2>=0.2
+# dev / tests
+pytest>=7.0
