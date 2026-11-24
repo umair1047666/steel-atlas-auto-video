@@ -1,0 +1,27 @@
+# Outputs, working state, credentials — never committed.
+# NOTE: jobs/ and state/ themselves are NOT ignored: job.json / state.json /
+# heartbeat.md MUST be committed so the next workflow can find the job.
+# Only the media inside them is ignored (by extension below).
+*.mp4
+*.mp3
+*.wav
+*.webm
+*.mov
+*.ass
+*.srt
+*.log
+__pycache__/
+.pytest_cache/
+.venv*/
+.venv-test/
+# Music tracks are large and licensed per-channel; keep them out of git.
+# (Place the track at music/track.mp3 locally / in the Actions cache instead.)
+music/*.mp3
+music/*.wav
+music/*.ogg
+# Secrets / service files
+.env
+*secret*
+*token*.json
+client_secret*.json
+credentials.json
