@@ -61,6 +61,23 @@ def check_file(path, cfg, expected_duration_s=None, tolerance=0.05):
             report["checks"]["audio_present"] = (
                 f"FAIL: audio is effectively silent (mean {mean_vol} dB)")
             ok = False
+        # The audio STREAM itself must span the full video — the container
+        # duration alone does not prove this (see audio_stream_duration).
+        if expected_duration_s:
+            aud_dur = audio_stream_duration(path)
+            if aud_dur is None:
+                report["checks"]["audio_duration"] = "FAIL: could not read audio stream duration"
+                ok = False
+            else:
+                low = expected_duration_s * (1 - tolerance)
+                high = expected_duration_s * (1 + tolerance)
+                if not (low <= aud_dur <= high):
+                    report["checks"]["audio_duration"] = (
+                        f"FAIL: audio stream {aud_dur:.2f}s not within ±{tolerance:.0%} of "
+                        f"{expected_duration_s:.2f}s")
+                    ok = False
+                else:
+                    report["checks"]["audio_duration"] = f"OK: audio stream {aud_dur:.2f}s"
 
     blacks = black_segments(path)
     report["black_segments"] = blacks
@@ -73,6 +90,32 @@ def check_file(path, cfg, expected_duration_s=None, tolerance=0.05):
 
     report["ok"] = ok
     return ok, report
+
+
+def audio_stream_duration(path):
+    """Duration of the AUDIO stream in seconds, or None.
+
+    The container (format) duration can be full-length while the audio
+    stream itself is cut short (this exact bug shipped once: ASS + audio
+    in one filter graph truncated the audio to ~5 s while the video was
+    11.9 s, and QC passed because it only checked format duration).
+    Always check the audio stream itself.
+    """
+    info = media_info(path)
+    if info is None:
+        return None
+    from .common import ffprobe
+    raw = ffprobe(path)
+    if not raw:
+        return None
+    audio = next((s for s in raw.get("streams", []) if s.get("codec_type") == "audio"), None)
+    if audio is None:
+        return None
+    dur = audio.get("duration")
+    if dur is not None:
+        return float(dur)
+    # Fall back to the container duration if the stream has none.
+    return float(raw.get("format", {}).get("duration") or 0) or None
 
 
 def mean_volume(path):
