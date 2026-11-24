@@ -46,10 +46,12 @@ user for them again. Do NOT put any secret value in chat, files, or memory.
   (Was 2% until 2026-11-24 — user said 2% was inaudible on phone speakers.)
   3-min track rule: first 30 s = hook, last 30 s = ending, middle looped.
 - **Video:** 1920x1080, 30 fps, CRF 18, loudnorm -14 LUFS.
-- **Voice flow:** YOU (the Steel Atlas account) make the narration voice for
-  each video. Put the finished voice file as `voice.mp3` in the job's Drive
-  folder and the pipeline uses it as-is (provided voice always wins). Edge TTS
-  (Christopher) and Piper are fallbacks only, used when no voice file is given.
+- **Voice: Edge TTS ONLY (user decision 2026-11-24).** Do NOT provide your own
+  voice file. The pipeline generates the narration voice automatically with
+  Edge TTS `en-US-ChristopherNeural` from the script text. Never place a
+  `voice.mp3` in the job folder — a provided voice file always wins over
+  Edge TTS, so providing one would override the TTS voice. (This supersedes
+  the earlier plan where the channel account supplied its own voice file.)
 - **Scenes:** YOU set each scene's `duration_s` in the job (5-10 s). One visual
   per scene, lasting exactly the scene duration. Visual pacing (3-5 s) = you
   write shorter scenes. No code animation/diagrams. Motion 60% = real stock
@@ -65,9 +67,10 @@ user for them again. Do NOT put any secret value in chat, files, or memory.
    `narration`, `search_terms`, `duration_s`). Put the job file at
    `jobs/<job_id>/job.json` in the repo (Contents API) AND sync it to the
    Drive job store folder `pipeline-jobs/<job_id>/`.
-3. Make the voice file yourself and put it as `voice.mp3` in the job's Drive
-   folder (`pipeline-jobs/<job_id>/`). If you do not provide one, Edge TTS
-   (Christopher) generates it.
+3. Make the voice: DO NOT make or provide a voice file. The pipeline
+   generates the narration voice automatically with Edge TTS
+   (ChristopherNeural) from your script. Never put a `voice.mp3` in the job
+   folder — a provided voice file always wins and would override the TTS voice.
 4. Dispatch the workflows IN ORDER, one at a time, waiting for each to finish
    before dispatching the next (dispatching all at once makes GitHub cancel
    the earlier ones — same concurrency group):
