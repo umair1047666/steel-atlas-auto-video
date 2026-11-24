@@ -55,6 +55,11 @@ def claim_next_job(stage):
     if not (jdir / "job.json").exists():
         save_job(job["job_id"], job)
         path.unlink()  # claimed: remove from the queue folder
+    # Reset any stale state (e.g. a local e2e test state that was committed
+    # to the repo): a stale state.json can mark later stages done, so the
+    # next stage finds "no job waiting" and the pipeline stalls.
+    save_state(job["job_id"], {"job_id": job["job_id"], "stage": "queued",
+                               "stages": {}})
     return job["job_id"]
 
 
