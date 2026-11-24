@@ -29,10 +29,13 @@ voice:
 
 music:
   track: "music/track.mp3"   # royalty-free track, placed here (see music/README.md)
-  level_db: -34              # LONGS: music sits 34 dB under the voice (volume=0.02, i.e. 2%);
-                             # sidechain ducking drops it to ~1% under the voice.
+  level_db: -20              # LONGS: music sits 20 dB under the voice (volume=0.10, i.e. 10%);
+                             # sidechain ducking drops it to ~-28 dB (~4%) under the voice.
+                             # Raised from -34 dB (2%) on 2026-11-24 — user reported 2%
+                             # inaudible on phone speakers; -20 dB is the standard
+                             # documentary background level (clearly audible, voice still dominant).
                              # SHORTS rule (separate shorts mode, not this config):
-                             # music 3% (-30 dB), ducked to 2% (-34 dB) under the voice.
+                             # music 12% (-18 dB), ducked to 8% (-22 dB) under the voice.
   duck_threshold: 0.03       # sidechaincompress threshold
   duck_ratio: 8
   duck_attack_ms: 200
