@@ -52,7 +52,11 @@ def _service():
         token=None, refresh_token=refresh_token,
         token_uri="https://oauth2.googleapis.com/token",
         client_id=client_id, client_secret=client_secret,
-        scopes=["https://www.googleapis.com/auth/drive.file"],
+        # No scopes forced here: the refresh token was granted its Drive
+        # scope in OAuth Playground, and forcing drive.file on refresh
+        # fails with invalid_scope when the grant used a different
+        # Drive scope (e.g. the full drive scope). The refresh returns
+        # an access token with the originally granted scopes.
     )
     return build("drive", "v3", credentials=creds)
 
