@@ -148,10 +148,22 @@ def pull_job(job_id):
     job_folder = _find_folder(service, job_id, jobs_root)
     if not job_folder:
         raise RuntimeError(f"job {job_id} not found in Drive job store")
-    resp = service.files().list(
-        q=f"'{job_folder}' in parents and trashed = false",
-        fields="files(id,name)", pageSize=100).execute()
-    for f in resp.get("files", []):
+    # Paginate: a full job has 130+ files (129 clips + job/state/voice);
+    # a single pageSize=100 list silently drops the rest (e.g. voice.mp3),
+    # which made render fail with "no voice file". Fetch every page.
+    all_files = []
+    page_token = None
+    while True:
+        resp = service.files().list(
+            q=f"'{job_folder}'" in parents and trashed = false",
+            fields="files(id,name),nextPageToken", pageSize=100,
+            pageToken=page_token).execute()
+        all_files.extend(resp.get("files", []))
+        page_token = resp.get("nextPageToken")
+        if not page_token:
+            break
+    log.info("job %s: %d files in Drive job store", job_id, len(all_files))
+    for f in all_files:
         name = f["name"]
         if name in KEEP_PATTERNS:
             dest = jdir / name
