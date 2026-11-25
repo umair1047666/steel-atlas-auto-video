@@ -1,0 +1,1313 @@
+{
+  "description": "Why Deepwater Horizon's Failed Test Drowned the Gulf in Oil — the story of the 2010 Deepwater Horizon disaster: the failed negative pressure test, the cement that never set, the blowout preventer that could not cut a bent pipe, eighty-seven days of oil in the Gulf, and the reckoning that is still going on sixteen years later.",
+  "job_id": "sa-0002",
+  "music_track": "track.mp3",
+  "scenes": [
+    {
+      "id": 1,
+      "narration": "On the night of April the twentieth, twenty ten, eleven men were about to die on a floating city of steel,",
+      "keywords": [
+        "offshore oil rig night",
+        "oil platform lights dark sea"
+      ],
+      "fallback_prompt": "dramatic photograph of an offshore oil rig lit up at night on a dark sea",
+      "duration_s": 8
+    },
+    {
+      "id": 2,
+      "narration": "forty miles off the coast of Louisiana. And the men who could have stopped it had already decided the well was safe.",
+      "keywords": [
+        "oil rig control room gauges",
+        "industrial pressure gauge"
+      ],
+      "fallback_prompt": "dramatic photograph of an offshore oil rig lit up at night on a dark sea",
+      "duration_s": 9
+    },
+    {
+      "id": 3,
+      "narration": "Two hours earlier, they had run a test, watched one gauge climb to fourteen hundred pounds of pressure while another read zero,",
+      "keywords": [
+        "pressure gauge industrial",
+        "industrial pressure gauge"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 9
+    },
+    {
+      "id": 4,
+      "narration": "and called the test a pass. By the time the sun came up, their rig would be on fire, their well would be bleeding into the sea,",
+      "keywords": [
+        "offshore oil rig night",
+        "oil platform lights dark sea"
+      ],
+      "fallback_prompt": "dramatic photograph of an offshore oil rig lit up at night on a dark sea",
+      "duration_s": 10
+    },
+    {
+      "id": 5,
+      "narration": "and the largest accidental oil spill in history would be under way.",
+      "keywords": [
+        "oil rig control room gauges",
+        "industrial pressure gauge"
+      ],
+      "fallback_prompt": "dramatic photograph of an offshore oil rig lit up at night on a dark sea",
+      "duration_s": 5
+    },
+    {
+      "id": 6,
+      "narration": "This is the story of the Deepwater Horizon, a rig so advanced it had drilled the deepest well in human history,",
+      "keywords": [
+        "deep sea oil rig",
+        "oil platform ocean aerial"
+      ],
+      "fallback_prompt": "dramatic photograph of a huge offshore oil rig in the open ocean",
+      "duration_s": 8
+    },
+    {
+      "id": 7,
+      "narration": "and the chain of small decisions that turned it into a bomb. It is a story about a test that lied, cement that never set, and a safety device that could not cut a bent pipe.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 10
+    },
+    {
+      "id": 8,
+      "narration": "And it is a story that is still not finished, because sixteen years later, the cheques are still being written.",
+      "keywords": [
+        "oil rig derrick silhouette",
+        "offshore drilling platform sea"
+      ],
+      "fallback_prompt": "dramatic photograph of a huge offshore oil rig in the open ocean",
+      "duration_s": 8
+    },
+    {
+      "id": 9,
+      "narration": "Before we go down to the well, here is the scale of what happened.",
+      "keywords": [
+        "oil spill disaster aerial view",
+        "crude oil ocean surface"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 6
+    },
+    {
+      "id": 10,
+      "narration": "One hundred and thirty-four million gallons of crude oil poured into the Gulf of Mexico.",
+      "keywords": [
+        "oil spill ocean aerial",
+        "oil slick sea surface"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 6
+    },
+    {
+      "id": 11,
+      "narration": "The well flowed for eighty-seven days. Eleven men were killed, and seventeen were injured.",
+      "keywords": [
+        "gulf of mexico aerial",
+        "oil spill black sea"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 6
+    },
+    {
+      "id": 12,
+      "narration": "And the bill, so far, is more than sixty-five billion dollars.",
+      "keywords": [
+        "oil spill disaster aerial view",
+        "crude oil ocean surface"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 5
+    },
+    {
+      "id": 13,
+      "narration": "The Deepwater Horizon was not some rusting old platform. She was built in two thousand and one in South Korea, by Hyundai Heavy Industries, and she was a fifth-generation semi-submersible,",
+      "keywords": [
+        "offshore oil rig construction",
+        "oil platform shipyard"
+      ],
+      "fallback_prompt": "photograph of a massive semi-submersible oil drilling rig in the ocean",
+      "duration_s": 10
+    },
+    {
+      "id": 14,
+      "narration": "a floating drilling machine the size of a city block, three hundred and ninety-six feet long and two hundred and fifty-six feet wide.",
+      "keywords": [
+        "semi-submersible oil rig",
+        "offshore drilling platform"
+      ],
+      "fallback_prompt": "photograph of a massive semi-submersible oil drilling rig in the ocean",
+      "duration_s": 9
+    },
+    {
+      "id": 15,
+      "narration": "She had no anchors. Eight computer-controlled thrusters held her over the well, within a few feet, in water a mile deep.",
+      "keywords": [
+        "oil rig aerial ocean",
+        "drilling platform sea"
+      ],
+      "fallback_prompt": "photograph of a massive semi-submersible oil drilling rig in the ocean",
+      "duration_s": 8
+    },
+    {
+      "id": 16,
+      "narration": "She could drill to thirty thousand feet below the sea, and her blowout preventer, the last line of defence,",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 8
+    },
+    {
+      "id": 17,
+      "narration": "was rated to fifteen thousand pounds per square inch.",
+      "keywords": [
+        "semi-submersible oil rig",
+        "offshore drilling platform"
+      ],
+      "fallback_prompt": "photograph of a massive semi-submersible oil drilling rig in the ocean",
+      "duration_s": 5
+    },
+    {
+      "id": 18,
+      "narration": "The rig belonged to Transocean, the biggest offshore driller in the world, and BP was paying about half a million dollars a day just to hire her,",
+      "keywords": [
+        "oil platform helicopter",
+        "offshore supply vessel rig"
+      ],
+      "fallback_prompt": "photograph of oil rig workers on the deck of an offshore drilling platform",
+      "duration_s": 10
+    },
+    {
+      "id": 19,
+      "narration": "closer to a million a day with the ships and helicopters and crews. And she had earned her reputation.",
+      "keywords": [
+        "rescue lifeboat sea",
+        "helicopter rescue ocean"
+      ],
+      "fallback_prompt": "photograph of a helicopter rescue over the ocean",
+      "duration_s": 8
+    },
+    {
+      "id": 20,
+      "narration": "Only seven months before the disaster, this same rig drilled the deepest oil well in history, thirty-five thousand and fifty feet down, in the Tiber field.",
+      "keywords": [
+        "oil drilling derrick",
+        "deepwater drilling rig"
+      ],
+      "fallback_prompt": "photograph of oil rig workers on the deck of an offshore drilling platform",
+      "duration_s": 10
+    },
+    {
+      "id": 21,
+      "narration": "Her job in the spring of twenty ten was a well called Macondo,",
+      "keywords": [
+        "oil platform gulf coast",
+        "louisiana offshore aerial"
+      ],
+      "fallback_prompt": "aerial photograph of the Louisiana coast and the Gulf of Mexico",
+      "duration_s": 5
+    },
+    {
+      "id": 22,
+      "narration": "in a patch of ocean the oil industry calls Mississippi Canyon Block two hundred and fifty-two, about forty miles off the Louisiana coast.",
+      "keywords": [
+        "gulf of mexico map",
+        "louisiana coast aerial"
+      ],
+      "fallback_prompt": "aerial photograph of the Louisiana coast and the Gulf of Mexico",
+      "duration_s": 9
+    },
+    {
+      "id": 23,
+      "narration": "BP had bought the lease in March of two thousand and eight for thirty-four million dollars, and the prize underneath was enormous.",
+      "keywords": [
+        "offshore oil lease map",
+        "gulf of mexico oil fields"
+      ],
+      "fallback_prompt": "aerial photograph of the Louisiana coast and the Gulf of Mexico",
+      "duration_s": 9
+    },
+    {
+      "id": 24,
+      "narration": "The rock was thought to hold about fifty million barrels of oil, worth billions of dollars.",
+      "keywords": [
+        "oil platform gulf coast",
+        "louisiana offshore aerial"
+      ],
+      "fallback_prompt": "aerial photograph of the Louisiana coast and the Gulf of Mexico",
+      "duration_s": 6
+    },
+    {
+      "id": 25,
+      "narration": "BP owned sixty-five percent of it. The rest belonged to two partners.",
+      "keywords": [
+        "gulf of mexico map",
+        "louisiana coast aerial"
+      ],
+      "fallback_prompt": "aerial photograph of the Louisiana coast and the Gulf of Mexico",
+      "duration_s": 5
+    },
+    {
+      "id": 26,
+      "narration": "The well itself was an engineering monster. The seabed lay about five thousand feet below the surface, and from there the hole went down another thirteen thousand feet through rock,",
+      "keywords": [
+        "oil well drilling",
+        "underwater seabed ocean floor"
+      ],
+      "fallback_prompt": "photograph of deep dark ocean water above the seabed",
+      "duration_s": 10
+    },
+    {
+      "id": 27,
+      "narration": "to eighteen thousand three hundred and sixty feet below sea level. That is more than three miles of steel and rock between the rig and the oil.",
+      "keywords": [
+        "deep ocean water",
+        "subsea oil well"
+      ],
+      "fallback_prompt": "photograph of deep dark ocean water above the seabed",
+      "duration_s": 10
+    },
+    {
+      "id": 28,
+      "narration": "And the oil was under enormous pressure, trapped in rock so hot and so tight that BP's own engineers said they had run out of drilling margin,",
+      "keywords": [
+        "deep sea underwater",
+        "ocean depth dark water"
+      ],
+      "fallback_prompt": "photograph of deep dark ocean water above the seabed",
+      "duration_s": 10
+    },
+    {
+      "id": 29,
+      "narration": "and had to stop short of the depth they had planned.",
+      "keywords": [
+        "oil well drilling",
+        "underwater seabed ocean floor"
+      ],
+      "fallback_prompt": "photograph of deep dark ocean water above the seabed",
+      "duration_s": 5
+    },
+    {
+      "id": 30,
+      "narration": "By the twentieth of April, the job was in trouble. The well was forty-three days behind schedule and fifty-eight million dollars over budget.",
+      "keywords": [
+        "oil platform deck workers",
+        "offshore rig operations"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig crew working on the drill deck",
+      "duration_s": 9
+    },
+    {
+      "id": 31,
+      "narration": "One rig had already worked on it. The Marianas had drilled for thirty-four days before a hurricane damaged her so badly that the Deepwater Horizon had to take over.",
+      "keywords": [
+        "oil rig derrick",
+        "offshore drilling platform workers"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig crew working on the drill deck",
+      "duration_s": 10
+    },
+    {
+      "id": 32,
+      "narration": "Now the well was finished, or nearly finished, and the crew had one last job: seal it up, temporarily,",
+      "keywords": [
+        "hurricane storm sea",
+        "storm waves ocean rig"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig crew working on the drill deck",
+      "duration_s": 8
+    },
+    {
+      "id": 33,
+      "narration": "so the rig could sail away and come back later to produce the oil. Engineers call this a temporary abandonment.",
+      "keywords": [
+        "oil platform deck workers",
+        "offshore rig operations"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig crew working on the drill deck",
+      "duration_s": 8
+    },
+    {
+      "id": 34,
+      "narration": "And it was during this final, routine procedure, not during the drilling, that everything went wrong.",
+      "keywords": [
+        "oil rig derrick",
+        "offshore drilling platform workers"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig crew working on the drill deck",
+      "duration_s": 6
+    },
+    {
+      "id": 35,
+      "narration": "That same day, the rig was celebrating. BP and Transocean managers had flown out to congratulate the crew on seven years without a lost-time accident.",
+      "keywords": [
+        "oil platform interior workers",
+        "offshore workers helmets"
+      ],
+      "fallback_prompt": "photograph of offshore oil rig workers in hard hats on a platform",
+      "duration_s": 10
+    },
+    {
+      "id": 36,
+      "narration": "The rig had even won a safety award. One hundred and twenty-six people were on board that night.",
+      "keywords": [
+        "oil rig crew meeting",
+        "offshore platform workers"
+      ],
+      "fallback_prompt": "photograph of offshore oil rig workers in hard hats on a platform",
+      "duration_s": 7
+    },
+    {
+      "id": 37,
+      "narration": "Eleven of them would never come home.",
+      "keywords": [
+        "oil rig workers celebration",
+        "offshore platform crew"
+      ],
+      "fallback_prompt": "photograph of offshore oil rig workers in hard hats on a platform",
+      "duration_s": 5
+    },
+    {
+      "id": 38,
+      "narration": "To understand what went wrong, you need to understand what a deepwater well is.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "photograph of heavy industrial oil drilling equipment and steel pipes",
+      "duration_s": 6
+    },
+    {
+      "id": 39,
+      "narration": "Imagine a straw, three miles long, drilled through a mile of ocean and two miles of rock,",
+      "keywords": [
+        "oil drilling pipe industrial",
+        "offshore drilling machinery"
+      ],
+      "fallback_prompt": "photograph of heavy industrial oil drilling equipment and steel pipes",
+      "duration_s": 7
+    },
+    {
+      "id": 40,
+      "narration": "into a reservoir of oil and gas under crushing pressure. The only things keeping that pressure down are three barriers.",
+      "keywords": [
+        "deep sea drilling",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of heavy industrial oil drilling equipment and steel pipes",
+      "duration_s": 8
+    },
+    {
+      "id": 41,
+      "narration": "The first is the drilling mud, a heavy fluid that fills the well and pushes back against the rock.",
+      "keywords": [
+        "drilling mud industrial",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of drilling mud operations on an offshore oil rig",
+      "duration_s": 8
+    },
+    {
+      "id": 42,
+      "narration": "The second is the cement, pumped around the steel casing at the bottom, to seal the oil where it belongs.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 8
+    },
+    {
+      "id": 43,
+      "narration": "And the third is the blowout preventer, a stack of steel valves on the seabed, the size of a small house,",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 8
+    },
+    {
+      "id": 44,
+      "narration": "that can slam the well shut in an emergency. On the night of April the twentieth, all three barriers would fail, one after another, like dominoes.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "photograph of heavy industrial oil drilling equipment and steel pipes",
+      "duration_s": 10
+    },
+    {
+      "id": 45,
+      "narration": "The first barrier to fail was the cement. At the bottom of the well, Halliburton had pumped in a special nitrogen-foamed cement, to seal the steel casing in place.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 10
+    },
+    {
+      "id": 46,
+      "narration": "But laboratory tests had already shown that this foam was unstable, and not every test result reached BP.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 7
+    },
+    {
+      "id": 47,
+      "narration": "Worse, the casing itself was off-centre. To keep it centred, Halliburton's models said the well needed twenty-one centralizers, little spring-loaded arms that hold the pipe in the middle of the hole.",
+      "keywords": [
+        "steel pipe industrial",
+        "oil well casing pipe"
+      ],
+      "fallback_prompt": "photograph of steel casing pipes on an offshore oil rig",
+      "duration_s": 10
+    },
+    {
+      "id": 48,
+      "narration": "BP used six. One of BP's own engineers wrote in an email that week, who cares, it is done, end of story, it will probably be fine,",
+      "keywords": [
+        "offshore drilling machinery",
+        "oil rig equipment"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 10
+    },
+    {
+      "id": 49,
+      "narration": "and we will get a good cement job.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 5
+    },
+    {
+      "id": 50,
+      "narration": "BP had also made two other choices to save time and money. Instead of a liner with a tieback, a design with four separate barriers, they chose a single long string of casing, with fewer defences,",
+      "keywords": [
+        "oil rig operations control",
+        "industrial control room"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig control room with engineers",
+      "duration_s": 10
+    },
+    {
+      "id": 51,
+      "narration": "because the safer option would have cost seven to ten million dollars more.",
+      "keywords": [
+        "offshore drilling cost",
+        "oil platform engineering"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig control room with engineers",
+      "duration_s": 5
+    },
+    {
+      "id": 52,
+      "narration": "And on the morning of the twentieth, they cancelled the cement bond log, a sound test that would have shown whether the cement had actually sealed.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 10
+    },
+    {
+      "id": 53,
+      "narration": "The test would have taken nine to twelve hours and cost a hundred and twenty-eight thousand dollars.",
+      "keywords": [
+        "oil rig operations control",
+        "industrial control room"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig control room with engineers",
+      "duration_s": 7
+    },
+    {
+      "id": 54,
+      "narration": "BP paid ten thousand dollars instead, and sent the testers home.",
+      "keywords": [
+        "offshore drilling cost",
+        "oil platform engineering"
+      ],
+      "fallback_prompt": "photograph of an offshore oil rig control room with engineers",
+      "duration_s": 5
+    },
+    {
+      "id": 55,
+      "narration": "That leaves the final check, the negative pressure test. This is the only test that can prove the cement at the bottom of the well is holding.",
+      "keywords": [
+        "industrial pressure test",
+        "pipeline pressure gauge"
+      ],
+      "fallback_prompt": "photograph of an industrial pressure test in progress on an oil rig",
+      "duration_s": 10
+    },
+    {
+      "id": 56,
+      "narration": "The crew lowers the pressure inside the well, below the pressure outside it, and watches.",
+      "keywords": [
+        "industrial pressure test",
+        "pipeline pressure gauge"
+      ],
+      "fallback_prompt": "photograph of industrial pressure gauges in an oil rig control room",
+      "duration_s": 6
+    },
+    {
+      "id": 57,
+      "narration": "If the pressure stays at zero, the cement is holding. If it climbs, the well is leaking, and the test has failed.",
+      "keywords": [
+        "industrial pressure test",
+        "pipeline pressure gauge"
+      ],
+      "fallback_prompt": "photograph of an industrial pressure test in progress on an oil rig",
+      "duration_s": 9
+    },
+    {
+      "id": 58,
+      "narration": "It is, in the words of the judge who later heard the case, the most critical test that is run before the blowout preventer is removed.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 10
+    },
+    {
+      "id": 59,
+      "narration": "On April the twentieth, the crew ran it for three hours, from about five in the afternoon until about eight at night.",
+      "keywords": [
+        "industrial pressure test",
+        "pipeline pressure gauge"
+      ],
+      "fallback_prompt": "photograph of industrial pressure gauges in an oil rig control room",
+      "duration_s": 9
+    },
+    {
+      "id": 60,
+      "narration": "And it failed, over and over again.",
+      "keywords": [
+        "control room monitors",
+        "oil rig instruments"
+      ],
+      "fallback_prompt": "photograph of industrial pressure gauges in an oil rig control room",
+      "duration_s": 5
+    },
+    {
+      "id": 61,
+      "narration": "Here is what the gauges showed. The drill pipe, one pipe into the well, kept building back to fourteen hundred pounds per square inch.",
+      "keywords": [
+        "pressure gauge industrial",
+        "industrial pressure gauge"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 10
+    },
+    {
+      "id": 62,
+      "narration": "The kill line, another pipe into the same well, read zero. Two pipes, one well, two different answers, and that is impossible unless something is badly wrong.",
+      "keywords": [
+        "oil rig worker phone",
+        "offshore worker radio"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 10
+    },
+    {
+      "id": 63,
+      "narration": "One toolpusher on the rig was convinced something was not right. But his shift had ended, and at about eight o'clock, the well site leaders declared the test a success,",
+      "keywords": [
+        "control room operator",
+        "industrial monitoring screens"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 10
+    },
+    {
+      "id": 64,
+      "narration": "on the strength of the zero reading alone. Fourteen hundred pounds of pressure was still sitting on the drill pipe.",
+      "keywords": [
+        "pressure gauge industrial",
+        "industrial pressure gauge"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 8
+    },
+    {
+      "id": 65,
+      "narration": "One engineer on shore, told about it by phone that night, said you cannot have pressure on the drill pipe and zero on the kill line in a test that is properly lined up.",
+      "keywords": [
+        "oil rig worker phone",
+        "offshore worker radio"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 10
+    },
+    {
+      "id": 66,
+      "narration": "With the test declared a pass, the crew began the next step: pumping the heavy drilling mud out of the riser,",
+      "keywords": [
+        "drilling mud industrial",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of drilling mud operations on an offshore oil rig",
+      "duration_s": 8
+    },
+    {
+      "id": 67,
+      "narration": "the long pipe back up to the rig, and replacing it with light seawater.",
+      "keywords": [
+        "oil rig derrick night",
+        "offshore platform seawater"
+      ],
+      "fallback_prompt": "photograph of gas bubbles rising through dark seawater",
+      "duration_s": 6
+    },
+    {
+      "id": 68,
+      "narration": "That mud was the only thing left holding the oil down. And the cement below it had already failed.",
+      "keywords": [
+        "drilling mud industrial",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of drilling mud operations on an offshore oil rig",
+      "duration_s": 8
+    },
+    {
+      "id": 69,
+      "narration": "Gas began to rise, silently, up eighteen thousand feet of well, expanding as it climbed, pushing the seawater ahead of it.",
+      "keywords": [
+        "gas bubbles underwater",
+        "ocean bubbles rising"
+      ],
+      "fallback_prompt": "photograph of gas bubbles rising through dark seawater",
+      "duration_s": 8
+    },
+    {
+      "id": 70,
+      "narration": "By the time anyone on deck realised the well was flowing, it was already too late.",
+      "keywords": [
+        "oil rig derrick night",
+        "offshore platform seawater"
+      ],
+      "fallback_prompt": "photograph of gas bubbles rising through dark seawater",
+      "duration_s": 6
+    },
+    {
+      "id": 71,
+      "narration": "Shortly before ten at night, the gas reached the rig. Mud and seawater burst out of the derrick, and then the gas found an ignition source, and the rig exploded.",
+      "keywords": [
+        "drilling mud industrial",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of drilling mud operations on an offshore oil rig",
+      "duration_s": 10
+    },
+    {
+      "id": 72,
+      "narration": "The explosion killed eleven men and injured seventeen. Their names were Jason Anderson, Aaron Dale Burkeen, Donald Clark, Stephen Ray Curtis, Gordon Jones, Roy Wyatt Kemp, Karl Kleppinger Junior, Keith Blair Manuel, Dewey Revette,",
+      "keywords": [
+        "memorial candles remembrance",
+        "oil rig workers silhouette"
+      ],
+      "fallback_prompt": "photograph of a memorial for offshore oil workers",
+      "duration_s": 10
+    },
+    {
+      "id": 73,
+      "narration": "Shane Roshto, and Adam Weise. The youngest was twenty-two. The oldest was fifty-six. Their bodies were never recovered.",
+      "keywords": [
+        "memorial candles remembrance",
+        "oil rig workers silhouette"
+      ],
+      "fallback_prompt": "photograph of a memorial for offshore oil workers",
+      "duration_s": 7
+    },
+    {
+      "id": 74,
+      "narration": "The rig burned for thirty-six hours. Fireboats poured water onto a fire they could not put out, because the fuel was coming up from the seabed, endlessly.",
+      "keywords": [
+        "oil rig fire sea",
+        "fireboat water oil rig"
+      ],
+      "fallback_prompt": "photograph of fireboats spraying water on a burning oil rig",
+      "duration_s": 10
+    },
+    {
+      "id": 75,
+      "narration": "Ninety-four crew were rescued by lifeboat, and seventeen were flown by helicopter to hospitals on shore.",
+      "keywords": [
+        "rescue lifeboat sea",
+        "helicopter rescue ocean"
+      ],
+      "fallback_prompt": "photograph of a lifeboat rescue at sea",
+      "duration_s": 6
+    },
+    {
+      "id": 76,
+      "narration": "And on the morning of April the twenty-second, Earth Day, the Deepwater Horizon listed, buckled, and sank into the water she had been drilling,",
+      "keywords": [
+        "oil rig sinking ocean",
+        "burning oil platform smoke"
+      ],
+      "fallback_prompt": "photograph of a damaged oil rig listing in the sea",
+      "duration_s": 10
+    },
+    {
+      "id": 77,
+      "narration": "five thousand feet down.",
+      "keywords": [
+        "burning oil platform smoke",
+        "oil rig sinking ocean"
+      ],
+      "fallback_prompt": "photograph of fireboats spraying water on a burning oil rig",
+      "duration_s": 5
+    },
+    {
+      "id": 78,
+      "narration": "But the disaster was only beginning, because the well was still open. On the seabed, the blowout preventer, the last line of defence, had failed too.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 10
+    },
+    {
+      "id": 79,
+      "narration": "Its blind shear ram, a set of steel blades designed to cut the drill pipe and seal the well, could not do its job,",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 10
+    },
+    {
+      "id": 80,
+      "narration": "because the pipe had buckled under the pressure and bent off-centre, wedged between the ram blocks.",
+      "keywords": [
+        "steel pipe bent damaged",
+        "industrial machinery underwater"
+      ],
+      "fallback_prompt": "underwater photograph of subsea oil equipment on the ocean floor",
+      "duration_s": 6
+    },
+    {
+      "id": 81,
+      "narration": "Investigators later found dead batteries and miswired controls in its subsea pods. The ram probably did try to close, that night.",
+      "keywords": [
+        "underwater robot rov",
+        "deep sea robot submersible"
+      ],
+      "fallback_prompt": "underwater photograph of subsea oil equipment on the ocean floor",
+      "duration_s": 8
+    },
+    {
+      "id": 82,
+      "narration": "It closed on a bent pipe, and it could not cut it.",
+      "keywords": [
+        "subsea equipment underwater",
+        "underwater oil machinery"
+      ],
+      "fallback_prompt": "underwater photograph of subsea oil equipment on the ocean floor",
+      "duration_s": 5
+    },
+    {
+      "id": 83,
+      "narration": "So the oil began to flow, and it would not stop for eighty-seven days.",
+      "keywords": [
+        "oil well leak underwater",
+        "crude oil underwater plume"
+      ],
+      "fallback_prompt": "underwater photograph of crude oil gushing from a broken wellhead",
+      "duration_s": 6
+    },
+    {
+      "id": 84,
+      "narration": "At first, BP told the world the leak was a thousand barrels a day.",
+      "keywords": [
+        "oil spill ocean",
+        "oil gushing underwater"
+      ],
+      "fallback_prompt": "underwater photograph of crude oil gushing from a broken wellhead",
+      "duration_s": 6
+    },
+    {
+      "id": 85,
+      "narration": "Then the estimate rose to five thousand. But BP's own engineers knew the truth.",
+      "keywords": [
+        "oil spill ocean",
+        "oil gushing underwater"
+      ],
+      "fallback_prompt": "underwater photograph of crude oil gushing from a broken wellhead",
+      "duration_s": 6
+    },
+    {
+      "id": 86,
+      "narration": "Their internal estimates ran from sixty-four thousand to a hundred and forty-six thousand barrels a day, and they told Congress five thousand anyway.",
+      "keywords": [
+        "oil spill ocean",
+        "oil gushing underwater"
+      ],
+      "fallback_prompt": "underwater photograph of crude oil gushing from a broken wellhead",
+      "duration_s": 9
+    },
+    {
+      "id": 87,
+      "narration": "The government scientists who finally measured it found the real number was about sixty-two thousand barrels a day at the start,",
+      "keywords": [
+        "oil spill ocean",
+        "oil gushing underwater"
+      ],
+      "fallback_prompt": "underwater photograph of crude oil gushing from a broken wellhead",
+      "duration_s": 8
+    },
+    {
+      "id": 88,
+      "narration": "falling to about fifty-three thousand by July. BP would later pay five hundred and twenty-five million dollars for misleading investors about that number.",
+      "keywords": [
+        "oil spill ocean",
+        "oil gushing underwater"
+      ],
+      "fallback_prompt": "underwater photograph of crude oil gushing from a broken wellhead",
+      "duration_s": 9
+    },
+    {
+      "id": 89,
+      "narration": "The attempts to stop it read like a catalogue of desperation. First, robots tried to close the blowout preventer by hand, a mile down, and failed.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 10
+    },
+    {
+      "id": 90,
+      "narration": "Then BP lowered a hundred-and-twenty-five-tonne steel dome over the leak, to catch the oil and pipe it to a ship.",
+      "keywords": [
+        "oil spill containment dome",
+        "underwater robot rov oil"
+      ],
+      "fallback_prompt": "photograph of a steel containment dome being lowered into the sea",
+      "duration_s": 8
+    },
+    {
+      "id": 91,
+      "narration": "It failed too, because the cold water and the gas combined into ice-like crystals that clogged the dome.",
+      "keywords": [
+        "oil spill containment dome",
+        "underwater robot rov oil"
+      ],
+      "fallback_prompt": "photograph of a steel containment dome being lowered into the sea",
+      "duration_s": 7
+    },
+    {
+      "id": 92,
+      "narration": "Then came the top kill, pumping heavy mud into the well, and the junk shot,",
+      "keywords": [
+        "drilling mud industrial",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of drilling mud operations on an offshore oil rig",
+      "duration_s": 6
+    },
+    {
+      "id": 93,
+      "narration": "firing golf balls and shredded tyres into the blowout preventer to plug it. Both failed.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 6
+    },
+    {
+      "id": 94,
+      "narration": "A tube was pushed into the broken pipe and some oil was collected, but the well kept flowing, and the slick kept growing,",
+      "keywords": [
+        "oil spill ocean aerial",
+        "oil slick sea surface"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 9
+    },
+    {
+      "id": 95,
+      "narration": "until it covered forty-three thousand three hundred square miles of ocean, an area the size of Virginia.",
+      "keywords": [
+        "oil spill ocean aerial",
+        "oil slick sea surface"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 7
+    },
+    {
+      "id": 96,
+      "narration": "Finally, on the fifteenth of July, a new capping stack was bolted onto the well, and the valves were closed, and the oil stopped.",
+      "keywords": [
+        "oil well capping stack",
+        "subsea oil equipment installation"
+      ],
+      "fallback_prompt": "photograph of engineers installing a capping stack on an offshore well",
+      "duration_s": 10
+    },
+    {
+      "id": 97,
+      "narration": "But the well was not dead, only capped. In early August, mud and cement were pumped in from above, in a static kill.",
+      "keywords": [
+        "drilling mud industrial",
+        "oil well drilling"
+      ],
+      "fallback_prompt": "photograph of drilling mud operations on an offshore oil rig",
+      "duration_s": 9
+    },
+    {
+      "id": 98,
+      "narration": "And two relief wells, drilled since May, bored down to meet the broken well, eighteen thousand feet below the sea.",
+      "keywords": [
+        "offshore drilling rig",
+        "oil drilling platform sea"
+      ],
+      "fallback_prompt": "photograph of an offshore drilling rig at work in the Gulf",
+      "duration_s": 8
+    },
+    {
+      "id": 99,
+      "narration": "On the sixteenth of September, the first relief well reached its target, and cement was pumped in.",
+      "keywords": [
+        "cement industrial pouring",
+        "construction cement mixer"
+      ],
+      "fallback_prompt": "photograph of industrial cement being poured around steel casing",
+      "duration_s": 7
+    },
+    {
+      "id": 100,
+      "narration": "On the nineteenth of September, the government declared the well effectively dead. The spill had lasted a hundred and fifty-two days from explosion to seal.",
+      "keywords": [
+        "oil well capping stack",
+        "subsea oil equipment installation"
+      ],
+      "fallback_prompt": "photograph of engineers installing a capping stack on an offshore well",
+      "duration_s": 10
+    },
+    {
+      "id": 101,
+      "narration": "By then, the damage was almost beyond counting. One hundred and thirty-four million gallons of oil had poured into the Gulf, about twelve times the Exxon Valdez spill.",
+      "keywords": [
+        "oil spill ocean aerial",
+        "oil slick sea surface"
+      ],
+      "fallback_prompt": "aerial photograph of a vast black oil slick spreading across blue ocean",
+      "duration_s": 10
+    },
+    {
+      "id": 102,
+      "narration": "More than thirteen hundred miles of shoreline were oiled, across five states. The government closed eighty-six thousand nine hundred and eighty-five square miles of federal waters to fishing, more than a third of the Gulf.",
+      "keywords": [
+        "oiled beach shoreline",
+        "oil polluted marsh louisiana"
+      ],
+      "fallback_prompt": "photograph of an oil-stained shoreline in the Gulf of Mexico",
+      "duration_s": 10
+    },
+    {
+      "id": 103,
+      "narration": "And the wildlife toll, counted by the government's own damage assessment, was staggering: between fifty-one thousand and eighty-four thousand birds killed,",
+      "keywords": [
+        "oiled bird pelican",
+        "wildlife oil spill beach"
+      ],
+      "fallback_prompt": "photograph of an oil-covered pelican on a polluted Gulf beach",
+      "duration_s": 8
+    },
+    {
+      "id": 104,
+      "narration": "up to a hundred and sixty-six thousand young sea turtles, the dolphins of Barataria Bay down by as much as half,",
+      "keywords": [
+        "sea turtle ocean",
+        "baby sea turtle beach"
+      ],
+      "fallback_prompt": "photograph of a sea turtle swimming in the Gulf of Mexico",
+      "duration_s": 8
+    },
+    {
+      "id": 105,
+      "narration": "and between two and five trillion newly hatched fish, gone.",
+      "keywords": [
+        "fish school ocean",
+        "fishing boat gulf"
+      ],
+      "fallback_prompt": "photograph of a school of fish in the open ocean",
+      "duration_s": 5
+    },
+    {
+      "id": 106,
+      "narration": "The cleanup was the largest in American history. At its peak, more than forty-seven thousand people and seven thousand vessels were working the spill,",
+      "keywords": [
+        "oil spill cleanup workers",
+        "oil boom floating sea"
+      ],
+      "fallback_prompt": "photograph of cleanup crews deploying orange containment boom on oily water",
+      "duration_s": 10
+    },
+    {
+      "id": 107,
+      "narration": "with eight hundred and thirty-five skimmers and a hundred and twenty-three aircraft, and more than thirteen million feet of floating boom.",
+      "keywords": [
+        "oil spill cleanup workers",
+        "oil skimmer boat"
+      ],
+      "fallback_prompt": "photograph of an oil skimmer vessel working on an oil slick",
+      "duration_s": 8
+    },
+    {
+      "id": 108,
+      "narration": "They sprayed one million eight hundred and forty thousand gallons of chemical dispersant,",
+      "keywords": [
+        "aircraft spraying ocean",
+        "oil dispersant spraying"
+      ],
+      "fallback_prompt": "photograph of an aircraft spraying dispersant over the ocean",
+      "duration_s": 5
+    },
+    {
+      "id": 109,
+      "narration": "and more than forty percent of it was pumped straight into the deep sea, a mile down, something that had never been tried before.",
+      "keywords": [
+        "oil spill cleanup workers",
+        "oil boom floating sea"
+      ],
+      "fallback_prompt": "photograph of cleanup crews deploying orange containment boom on oily water",
+      "duration_s": 10
+    },
+    {
+      "id": 110,
+      "narration": "And when the government's scientists added it all up, they found that only a quarter of the oil had been captured, burned or skimmed.",
+      "keywords": [
+        "oil skimmer boat",
+        "oil spill response vessels"
+      ],
+      "fallback_prompt": "photograph of cleanup crews deploying orange containment boom on oily water",
+      "duration_s": 10
+    },
+    {
+      "id": 111,
+      "narration": "A quarter had evaporated. A quarter had been dispersed into tiny droplets. And a quarter of it, more than a million barrels, was still out there, on the beaches, in the marshes, and buried in the sand.",
+      "keywords": [
+        "aircraft spraying ocean",
+        "oil dispersant spraying"
+      ],
+      "fallback_prompt": "photograph of cleanup crews deploying orange containment boom on oily water",
+      "duration_s": 10
+    },
+    {
+      "id": 112,
+      "narration": "Then came the reckoning. In November of twenty twelve, BP pleaded guilty to fourteen criminal charges, including eleven counts of manslaughter, one for each man who died,",
+      "keywords": [
+        "federal courthouse columns",
+        "courtroom judge gavel"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 10
+    },
+    {
+      "id": 113,
+      "narration": "and agreed to pay four and a half billion dollars in criminal fines and other payments.",
+      "keywords": [
+        "law office documents",
+        "courtroom interior"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 6
+    },
+    {
+      "id": 114,
+      "narration": "Transocean pleaded guilty too, and paid one point four billion dollars. Halliburton pleaded guilty to destroying evidence, and was fined two hundred thousand dollars.",
+      "keywords": [
+        "federal courthouse columns",
+        "courtroom judge gavel"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 10
+    },
+    {
+      "id": 115,
+      "narration": "And in September of twenty fourteen, a federal judge ruled that BP had been grossly negligent, driven, in his words,",
+      "keywords": [
+        "federal courthouse columns",
+        "courtroom judge gavel"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 8
+    },
+    {
+      "id": 116,
+      "narration": "by a desire to save time and money, and he divided the blame: sixty-seven percent to BP, thirty percent to Transocean, and three percent to Halliburton.",
+      "keywords": [
+        "law office documents",
+        "courtroom interior"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 10
+    },
+    {
+      "id": 117,
+      "narration": "In April of twenty sixteen, BP agreed to pay twenty point eight billion dollars, the largest environmental settlement in American history.",
+      "keywords": [
+        "legal documents signing",
+        "law office documents"
+      ],
+      "fallback_prompt": "photograph of legal documents being signed",
+      "duration_s": 8
+    },
+    {
+      "id": 118,
+      "narration": "By twenty eighteen, the total cost to BP had passed sixty-five billion dollars.",
+      "keywords": [
+        "federal courthouse columns",
+        "courtroom judge gavel"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 5
+    },
+    {
+      "id": 119,
+      "narration": "And for the deaths of the eleven men, no one ever went to prison.",
+      "keywords": [
+        "law office documents",
+        "courtroom interior"
+      ],
+      "fallback_prompt": "photograph of a federal courthouse exterior with stone columns",
+      "duration_s": 6
+    },
+    {
+      "id": 120,
+      "narration": "The disaster changed the rules of the sea. The government halted deepwater drilling for almost five months, and when it came back, every operator had to prove it could cap a blown-out well.",
+      "keywords": [
+        "capping stack equipment",
+        "oil spill response equipment"
+      ],
+      "fallback_prompt": "photograph of an offshore oil platform with safety inspectors at work",
+      "duration_s": 10
+    },
+    {
+      "id": 121,
+      "narration": "The agency that had overseen the industry, the Minerals Management Service, was torn apart and rebuilt as two new agencies.",
+      "keywords": [
+        "offshore oil rig regulations",
+        "oil platform inspection"
+      ],
+      "fallback_prompt": "photograph of an offshore oil platform with safety inspectors at work",
+      "duration_s": 8
+    },
+    {
+      "id": 122,
+      "narration": "New rules made safety systems mandatory, and blowout preventers had to be certified by independent inspectors.",
+      "keywords": [
+        "blowout preventer equipment",
+        "subsea oil equipment"
+      ],
+      "fallback_prompt": "underwater photograph of a blowout preventer on the ocean floor",
+      "duration_s": 6
+    },
+    {
+      "id": 123,
+      "narration": "And the industry built its own answer: standing capping stacks, kept ready in the Gulf, so that no well would ever again flow for eighty-seven days.",
+      "keywords": [
+        "oil well capping stack",
+        "subsea oil equipment installation"
+      ],
+      "fallback_prompt": "photograph of engineers installing a capping stack on an offshore well",
+      "duration_s": 10
+    },
+    {
+      "id": 124,
+      "narration": "And from then on, no deepwater permit was granted unless the operator could show it could contain a blowout.",
+      "keywords": [
+        "offshore oil rig regulations",
+        "oil platform inspection"
+      ],
+      "fallback_prompt": "photograph of an offshore oil platform with safety inspectors at work",
+      "duration_s": 8
+    },
+    {
+      "id": 125,
+      "narration": "And yet the story is still not finished. On the twenty-third of October, twenty twenty-six, just weeks ago, BP and the state of Louisiana signed a new agreement,",
+      "keywords": [
+        "louisiana coast sunset",
+        "wetlands restoration louisiana"
+      ],
+      "fallback_prompt": "aerial photograph of Louisiana coastal marshes recovering at sunset",
+      "duration_s": 10
+    },
+    {
+      "id": 126,
+      "narration": "bringing forward the last of the payments, about three hundred and fifty million dollars, and closing the last of the coastal lawsuits.",
+      "keywords": [
+        "gulf of mexico waves",
+        "louisiana bayou aerial"
+      ],
+      "fallback_prompt": "aerial photograph of Louisiana coastal marshes recovering at sunset",
+      "duration_s": 9
+    },
+    {
+      "id": 127,
+      "narration": "Sixteen years after the explosion, the cheques are still being written. The Gulf is still recovering.",
+      "keywords": [
+        "louisiana marsh wetlands",
+        "gulf coast marsh aerial"
+      ],
+      "fallback_prompt": "aerial photograph of Louisiana coastal marshes recovering at sunset",
+      "duration_s": 6
+    },
+    {
+      "id": 128,
+      "narration": "And the question the Deepwater Horizon leaves behind is the same one those eleven men faced on the night of April the twentieth: when the gauge says one thing and the money says another,",
+      "keywords": [
+        "pressure gauge industrial",
+        "industrial pressure gauge"
+      ],
+      "fallback_prompt": "close-up photograph of an industrial pressure gauge dial",
+      "duration_s": 10
+    },
+    {
+      "id": 129,
+      "narration": "which one do you believe? Tell me in the comments. And if you want to see how humans build the impossible, and what happens when they get it wrong, subscribe to The Steel Atlas.",
+      "keywords": [
+        "gulf of mexico waves",
+        "louisiana bayou aerial"
+      ],
+      "fallback_prompt": "aerial photograph of Louisiana coastal marshes recovering at sunset",
+      "duration_s": 10
+    }
+  ],
+  "script": "On the night of April the twentieth, twenty ten, [HL]eleven men[/HL] were about to die on a floating city of steel, forty miles off the coast of Louisiana. And the men who could have stopped it had already decided the well was safe. Two hours earlier, they had run a test, watched one gauge climb to [HL]fourteen hundred pounds of pressure[/HL] while another read zero, and called the test a pass. By the time the sun came up, their rig would be on fire, their well would be bleeding into the sea, and the largest accidental oil spill in history would be under way.\n\nThis is the story of the Deepwater Horizon, a rig so advanced it had drilled the deepest well in human history, and the chain of small decisions that turned it into a bomb. It is a story about a test that lied, cement that never set, and a safety device that could not cut a bent pipe. And it is a story that is still not finished, because sixteen years later, the cheques are still being written.\n\nBefore we go down to the well, here is the scale of what happened. [HL]One hundred and thirty-four million gallons[/HL] of crude oil poured into the Gulf of Mexico. The well flowed for [HL]eighty-seven days[/HL]. Eleven men were killed, and seventeen were injured. And the bill, so far, is more than sixty-five billion dollars.\n\nThe Deepwater Horizon was not some rusting old platform. She was built in two thousand and one in South Korea, by Hyundai Heavy Industries, and she was a fifth-generation semi-submersible, a floating drilling machine the size of a city block, three hundred and ninety-six feet long and two hundred and fifty-six feet wide. She had no anchors. Eight computer-controlled thrusters held her over the well, within a few feet, in water a mile deep. She could drill to [HL]thirty thousand feet[/HL] below the sea, and her blowout preventer, the last line of defence, was rated to fifteen thousand pounds per square inch.\n\nThe rig belonged to Transocean, the biggest offshore driller in the world, and BP was paying about half a million dollars a day just to hire her, closer to a million a day with the ships and helicopters and crews. And she had earned her reputation. Only seven months before the disaster, this same rig drilled the deepest oil well in history, [HL]thirty-five thousand and fifty feet[/HL] down, in the Tiber field.\n\nHer job in the spring of twenty ten was a well called Macondo, in a patch of ocean the oil industry calls Mississippi Canyon Block two hundred and fifty-two, about forty miles off the Louisiana coast. BP had bought the lease in March of two thousand and eight for thirty-four million dollars, and the prize underneath was enormous. The rock was thought to hold about [HL]fifty million barrels[/HL] of oil, worth billions of dollars. BP owned sixty-five percent of it. The rest belonged to two partners.\n\nThe well itself was an engineering monster. The seabed lay about five thousand feet below the surface, and from there the hole went down another thirteen thousand feet through rock, to [HL]eighteen thousand three hundred and sixty feet[/HL] below sea level. That is more than three miles of steel and rock between the rig and the oil. And the oil was under enormous pressure, trapped in rock so hot and so tight that BP's own engineers said they had run out of drilling margin, and had to stop short of the depth they had planned.\n\nBy the twentieth of April, the job was in trouble. The well was [HL]forty-three days[/HL] behind schedule and fifty-eight million dollars over budget. One rig had already worked on it. The Marianas had drilled for thirty-four days before a hurricane damaged her so badly that the Deepwater Horizon had to take over. Now the well was finished, or nearly finished, and the crew had one last job: seal it up, temporarily, so the rig could sail away and come back later to produce the oil. Engineers call this a temporary abandonment. And it was during this final, routine procedure, not during the drilling, that everything went wrong.\n\nThat same day, the rig was celebrating. BP and Transocean managers had flown out to congratulate the crew on [HL]seven years[/HL] without a lost-time accident. The rig had even won a safety award. One hundred and twenty-six people were on board that night. Eleven of them would never come home.\n\nTo understand what went wrong, you need to understand what a deepwater well is. Imagine a straw, three miles long, drilled through a mile of ocean and two miles of rock, into a reservoir of oil and gas under crushing pressure. The only things keeping that pressure down are three barriers. The first is the drilling mud, a heavy fluid that fills the well and pushes back against the rock. The second is the cement, pumped around the steel casing at the bottom, to seal the oil where it belongs. And the third is the blowout preventer, a stack of steel valves on the seabed, the size of a small house, that can slam the well shut in an emergency. On the night of April the twentieth, all three barriers would fail, one after another, like dominoes.\n\nThe first barrier to fail was the cement. At the bottom of the well, Halliburton had pumped in a special nitrogen-foamed cement, to seal the steel casing in place. But laboratory tests had already shown that this foam was unstable, and not every test result reached BP. Worse, the casing itself was off-centre. To keep it centred, Halliburton's models said the well needed [HL]twenty-one centralizers[/HL], little spring-loaded arms that hold the pipe in the middle of the hole. BP used six. One of BP's own engineers wrote in an email that week, who cares, it is done, end of story, it will probably be fine, and we will get a good cement job.\n\nBP had also made two other choices to save time and money. Instead of a liner with a tieback, a design with four separate barriers, they chose a single long string of casing, with fewer defences, because the safer option would have cost seven to ten million dollars more. And on the morning of the twentieth, they cancelled the cement bond log, a sound test that would have shown whether the cement had actually sealed. The test would have taken nine to twelve hours and cost [HL]a hundred and twenty-eight thousand dollars[/HL]. BP paid ten thousand dollars instead, and sent the testers home.\n\nThat leaves the final check, the negative pressure test. This is the only test that can prove the cement at the bottom of the well is holding. The crew lowers the pressure inside the well, below the pressure outside it, and watches. If the pressure stays at zero, the cement is holding. If it climbs, the well is leaking, and the test has failed. It is, in the words of the judge who later heard the case, the most critical test that is run before the blowout preventer is removed. On April the twentieth, the crew ran it for [HL]three hours[/HL], from about five in the afternoon until about eight at night. And it failed, over and over again.\n\nHere is what the gauges showed. The drill pipe, one pipe into the well, kept building back to [HL]fourteen hundred pounds per square inch[/HL]. The kill line, another pipe into the same well, read zero. Two pipes, one well, two different answers, and that is impossible unless something is badly wrong. One toolpusher on the rig was convinced something was not right. But his shift had ended, and at about eight o'clock, the well site leaders declared the test a success, on the strength of the zero reading alone. Fourteen hundred pounds of pressure was still sitting on the drill pipe. One engineer on shore, told about it by phone that night, said you cannot have pressure on the drill pipe and zero on the kill line in a test that is properly lined up.\n\nWith the test declared a pass, the crew began the next step: pumping the heavy drilling mud out of the riser, the long pipe back up to the rig, and replacing it with light seawater. That mud was the only thing left holding the oil down. And the cement below it had already failed. Gas began to rise, silently, up eighteen thousand feet of well, expanding as it climbed, pushing the seawater ahead of it. By the time anyone on deck realised the well was flowing, it was already too late.\n\nShortly before ten at night, the gas reached the rig. Mud and seawater burst out of the derrick, and then the gas found an ignition source, and the rig exploded. The explosion killed [HL]eleven men[/HL] and injured seventeen. Their names were Jason Anderson, Aaron Dale Burkeen, Donald Clark, Stephen Ray Curtis, Gordon Jones, Roy Wyatt Kemp, Karl Kleppinger Junior, Keith Blair Manuel, Dewey Revette, Shane Roshto, and Adam Weise. The youngest was twenty-two. The oldest was fifty-six. Their bodies were never recovered.\n\nThe rig burned for [HL]thirty-six hours[/HL]. Fireboats poured water onto a fire they could not put out, because the fuel was coming up from the seabed, endlessly. Ninety-four crew were rescued by lifeboat, and seventeen were flown by helicopter to hospitals on shore. And on the morning of April the twenty-second, Earth Day, the Deepwater Horizon listed, buckled, and sank into the water she had been drilling, five thousand feet down.\n\nBut the disaster was only beginning, because the well was still open. On the seabed, the blowout preventer, the last line of defence, had failed too. Its blind shear ram, a set of steel blades designed to cut the drill pipe and seal the well, could not do its job, because the pipe had buckled under the pressure and bent off-centre, wedged between the ram blocks. Investigators later found dead batteries and miswired controls in its subsea pods. The ram probably did try to close, that night. It closed on a bent pipe, and it could not cut it.\n\nSo the oil began to flow, and it would not stop for eighty-seven days. At first, BP told the world the leak was a thousand barrels a day. Then the estimate rose to five thousand. But BP's own engineers knew the truth. Their internal estimates ran from sixty-four thousand to a hundred and forty-six thousand barrels a day, and they told Congress five thousand anyway. The government scientists who finally measured it found the real number was about [HL]sixty-two thousand barrels a day[/HL] at the start, falling to about fifty-three thousand by July. BP would later pay five hundred and twenty-five million dollars for misleading investors about that number.\n\nThe attempts to stop it read like a catalogue of desperation. First, robots tried to close the blowout preventer by hand, a mile down, and failed. Then BP lowered a hundred-and-twenty-five-tonne steel dome over the leak, to catch the oil and pipe it to a ship. It failed too, because the cold water and the gas combined into ice-like crystals that clogged the dome. Then came the top kill, pumping heavy mud into the well, and the junk shot, firing golf balls and shredded tyres into the blowout preventer to plug it. Both failed. A tube was pushed into the broken pipe and some oil was collected, but the well kept flowing, and the slick kept growing, until it covered [HL]forty-three thousand three hundred square miles[/HL] of ocean, an area the size of Virginia.\n\nFinally, on the fifteenth of July, a new capping stack was bolted onto the well, and the valves were closed, and the oil stopped. But the well was not dead, only capped. In early August, mud and cement were pumped in from above, in a static kill. And two relief wells, drilled since May, bored down to meet the broken well, eighteen thousand feet below the sea. On the sixteenth of September, the first relief well reached its target, and cement was pumped in. On the nineteenth of September, the government declared the well effectively dead. The spill had lasted [HL]a hundred and fifty-two days[/HL] from explosion to seal.\n\nBy then, the damage was almost beyond counting. One hundred and thirty-four million gallons of oil had poured into the Gulf, about twelve times the Exxon Valdez spill. More than [HL]thirteen hundred miles[/HL] of shoreline were oiled, across five states. The government closed eighty-six thousand nine hundred and eighty-five square miles of federal waters to fishing, more than a third of the Gulf. And the wildlife toll, counted by the government's own damage assessment, was staggering: between [HL]fifty-one thousand and eighty-four thousand birds[/HL] killed, up to a hundred and sixty-six thousand young sea turtles, the dolphins of Barataria Bay down by as much as half, and between two and five trillion newly hatched fish, gone.\n\nThe cleanup was the largest in American history. At its peak, more than [HL]forty-seven thousand people[/HL] and seven thousand vessels were working the spill, with eight hundred and thirty-five skimmers and a hundred and twenty-three aircraft, and more than thirteen million feet of floating boom. They sprayed [HL]one million eight hundred and forty thousand gallons[/HL] of chemical dispersant, and more than forty percent of it was pumped straight into the deep sea, a mile down, something that had never been tried before. And when the government's scientists added it all up, they found that only a quarter of the oil had been captured, burned or skimmed. A quarter had evaporated. A quarter had been dispersed into tiny droplets. And a quarter of it, more than a million barrels, was still out there, on the beaches, in the marshes, and buried in the sand.\n\nThen came the reckoning. In November of twenty twelve, BP pleaded guilty to fourteen criminal charges, including eleven counts of manslaughter, one for each man who died, and agreed to pay four and a half billion dollars in criminal fines and other payments. Transocean pleaded guilty too, and paid one point four billion dollars. Halliburton pleaded guilty to destroying evidence, and was fined two hundred thousand dollars. And in September of twenty fourteen, a federal judge ruled that BP had been grossly negligent, driven, in his words, by a desire to save time and money, and he divided the blame: [HL]sixty-seven percent[/HL] to BP, thirty percent to Transocean, and three percent to Halliburton. In April of twenty sixteen, BP agreed to pay [HL]twenty point eight billion dollars[/HL], the largest environmental settlement in American history. By twenty eighteen, the total cost to BP had passed [HL]sixty-five billion dollars[/HL]. And for the deaths of the eleven men, no one ever went to prison.\n\nThe disaster changed the rules of the sea. The government halted deepwater drilling for [HL]almost five months[/HL], and when it came back, every operator had to prove it could cap a blown-out well. The agency that had overseen the industry, the Minerals Management Service, was torn apart and rebuilt as two new agencies. New rules made safety systems mandatory, and blowout preventers had to be certified by independent inspectors. And the industry built its own answer: standing capping stacks, kept ready in the Gulf, so that no well would ever again flow for eighty-seven days. And from then on, no deepwater permit was granted unless the operator could show it could contain a blowout.\n\nAnd yet the story is still not finished. On the twenty-third of October, twenty twenty-six, just weeks ago, BP and the state of Louisiana signed a new agreement, bringing forward the last of the payments, about [HL]three hundred and fifty million dollars[/HL], and closing the last of the coastal lawsuits. Sixteen years after the explosion, the cheques are still being written. The Gulf is still recovering. And the question the Deepwater Horizon leaves behind is the same one those eleven men faced on the night of April the twentieth: when the gauge says one thing and the money says another, which one do you believe? Tell me in the comments. And if you want to see how humans build the impossible, and what happens when they get it wrong, subscribe to The Steel Atlas.",
+  "status": "queued",
+  "tags": [
+    "Deepwater Horizon",
+    "BP oil spill",
+    "Gulf of Mexico",
+    "offshore drilling",
+    "Macondo well",
+    "blowout preventer",
+    "oil spill disaster",
+    "engineering disaster",
+    "The Steel Atlas",
+    "mega projects"
+  ],
+  "title": "Why Deepwater Horizon's Failed Test Drowned the Gulf in Oil",
+  "voice_file": null
+}
