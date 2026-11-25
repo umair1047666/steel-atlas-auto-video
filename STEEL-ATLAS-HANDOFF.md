@@ -54,9 +54,12 @@ user for them again. Do NOT put any secret value in chat, files, or memory.
   the earlier plan where the channel account supplied its own voice file.)
 - **Scenes:** YOU set each scene's `duration_s` in the job (5-10 s). One visual
   per scene, lasting exactly the scene duration. Visual pacing (3-5 s) = you
-  write shorter scenes. No code animation/diagrams. Motion 60% = real stock
-  (Pexels/Pixabay/NASA/Wikimedia/Openverse, relevance-gated, >=720p only);
-  stills 40% = 50% real / 50% AI stills (Cloudflare FLUX.1).
+  write shorter scenes. No code animation/diagrams. Visual mix TARGET is
+  60% motion / 40% stills (NOT enforced in config). Per scene the pipeline
+  tries: real clip (Pexels/Pixabay/NASA/Wikimedia, relevance-gated, >=720p
+  only) → real photo + zoom → AI still (Cloudflare FLUX.1) + zoom → title
+  card. So the actual ratio depends on what clips are found. There is NO AI
+  video generator — "AI motion" means AI stills with zoom/pan, not real AI video.
 
 ## 5. How to make a video (your job, every video)
 
