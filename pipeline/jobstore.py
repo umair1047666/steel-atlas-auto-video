@@ -148,9 +148,10 @@ def pull_job(job_id):
     job_folder = _find_folder(service, job_id, jobs_root)
     if not job_folder:
         raise RuntimeError(f"job {job_id} not found in Drive job store")
-    # Paginate: a full job has 130+ files (129 clips + job/state/voice);
-    # a single pageSize=100 list silently drops the rest (e.g. voice.mp3),
-    # which made render fail with "no voice file". Fetch every page.
+    # Paginate: a job can hold far more than 100 files (md-0001 has 175).
+    # Without pagination the pull silently drops files past the first page,
+    # and the next stage then fails ("no voice file") even though the file
+    # IS in the Drive job store. This broke render for the first real jobs.
     all_files = []
     page_token = None
     while True:
