@@ -155,7 +155,7 @@ def pull_job(job_id):
     page_token = None
     while True:
         resp = service.files().list(
-            q=f"'{job_folder}'" in parents and trashed = false",
+            q=f"'{job_folder}' in parents and trashed = false",
             fields="files(id,name),nextPageToken", pageSize=100,
             pageToken=page_token).execute()
         all_files.extend(resp.get("files", []))
