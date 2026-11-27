@@ -1,8 +1,12 @@
 {
   "job_id": "sa-0002",
-  "stage": "clip-search",
+  "stage": "voice",
   "stages": {
     "clip-search": {
+      "ok": true,
+      "detail": ""
+    },
+    "voice": {
       "ok": true,
       "detail": ""
     }
@@ -782,5 +786,8 @@
       "source": "pexels",
       "kind": "clip"
     }
-  ]
+  ],
+  "voice": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-0002/voice.mp3",
+  "voice_words": "/home/runner/work/steel-atlas-auto-video/steel-atlas-auto-video/jobs/sa-0002/voice-words.json",
+  "voice_duration_s": 982.82
 }
